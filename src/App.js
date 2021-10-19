@@ -8,13 +8,16 @@ import Header from './compunent/Header/Header';
 import Home from './compunent/Home/Home';
 import LogIn from './compunent/LogIn/LogIn';
 import NotFound from './compunent/NotFound/NotFound';
+import PrivateRoute from './compunent/PrivateRoute/PrivateRoute';
+import Registration from './compunent/Registation/Registaion';
 import Services from './compunent/Services/Services';
+import ServicesDetails from './compunent/ServicesDetails/ServicesDetails';
 import AuthProvider from './context/AuthProvider';
 
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <AuthProvider>
      <Router>
        <Header></Header>
@@ -28,11 +31,17 @@ function App() {
          <Route path="/service">
            <Services></Services>
          </Route>
-         <Route path="/about">
+         <PrivateRoute path='/serviceDetails/:detailsId'>
+          <ServicesDetails></ServicesDetails>
+         </PrivateRoute>
+         <PrivateRoute path="/about">
            <About></About>
-         </Route>
+         </PrivateRoute>
          <Route path="/contact">
            <Contact></Contact>
+         </Route>
+         <Route path="/registration">
+            <Registration></Registration>
          </Route>
          <Route path="/login">
            <LogIn></LogIn>

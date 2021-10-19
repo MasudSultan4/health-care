@@ -1,0 +1,22 @@
+.About {
+  height: auto;
+}
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+@media only screen and (max-width: 990px) {
+  .about-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 765px) {
+  .about-section {
+    display: flex;
+    flex-direction: column;
+  }
+}

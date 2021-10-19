@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Mustafizur Rahman",
+    "Fee": "1200",
+    "url": "https://image.freepik.com/free-photo/hospital-healthcare-workers-covid-19-treatment-concept-young-doctor-scrubs-making-daily-errands-clinic-listening-patient-symptoms-look-camera-professional-physician-curing-diseases_1258-57233.jpg",
+    "thumbnailUrl": "https://via.placeholder.com/150/92c952",
+    "serviceDetails": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "experans": "MBBS, MS, MD (Chittagong Medical College)"
+  },
+  {
+    "id": 2,
+    "name": "Shamima Fahad",
+    "Fee": "$800",
+    "url": "https://img.freepik.com/free-photo/healthcare-workers-prevent-virus-insurance-medicine-concept-smiling-attractive-female-doctor-nurse-blue-scrubs-pointing-fingers-left-show-patients-advertisement-important-info_1258-57267.jpg?size=338&ext=jpg",
+    "thumbnailUrl": "https://via.placeholder.com/150/771796",
+    "serviceDetails": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "experans": "MBBS, MS, MD (Chittagong Medical College)"
+  },
+  {
+    "id": 3,
+    "name": "Jannat Ruhi",
+
+    "Fee": "$700",
+    "serviceDetails": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+    "url": "https://image.freepik.com/free-photo/healthcare-workers-medicine-insurance-covid-19-pandemic-concept-serious-determined-professional-female-nurse-doctor-blue-scrubs-holding-stethoscope-wear-glasses-look-confident_1258-57384.jpg?q=tbn:ANd9GcQEgy_CY0KGk_MvY78TfFRXlGVaK1TIWaf-Cx4F8V-DAJmZwHSR5JO1kAzLckZwtQnxSsc&usqp=CAU",
+    "thumbnailUrl": "https://via.placeholder.com/150/f66b97",
+    "experans": "MBBS, MS, MD (Dhaka Medical College)"
+  },
+  {
+    "id": 4,
+    "name": "Abdul Khalek",
+    "Fee": "1000",
+    "serviceDetails": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "url": "https://image.freepik.com/free-photo/healthcare-workers-medicine-covid-19-pandemic-self-quarantine-concept-smiling-attractive-doctor-scrubs-glasses-stethoscope-neck-cross-arms-chest-ready-help-patients_1258-58772.jpg",
+    "thumbnailUrl": "https://via.placeholder.com/150/56a8c2",
+    "experans": "MBBS, MS, BHMS(Comilla Medical College)"
+  },
+  {
+    "id": 5,
+    "name": "Imran Rony",
+    "Fee": "600",
+    "url": "https://img.freepik.com/free-photo/covid-19-healthcare-workers-pandemic-preventing-virus-concept-serious-determined-doctor-working-with-coronavirus-patients-wearing-protective-personal-equipment-medical-mask-gloves_1258-58624.jpg?size=338&ext=jpg",
+    "serviceDetails": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "thumbnailUrl": "https://via.placeholder.com/150/b0f7cc",
+    "experans": "MBBS, MS, BHMS(Rajshahi Medical College)"
+  },
+  {
+    "id": 6,
+    "name": "Daudul Islam",
+    "Fee": "$900",
+    "serviceDetails": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "url": "https://i.ibb.co/bRKnTDt/doctor6.jpg",
+    "thumbnailUrl": "https://via.placeholder.com/150/54176f",
+    "experans": "MBBS, BPT, MS(Rangpur Medical College)"
+  }
+]

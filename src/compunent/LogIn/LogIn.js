@@ -1,35 +1,43 @@
 import React from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from './../../Hooks/useAuth';
+import './LogIn.css';
 
-const LogIn = () => {
-  const { singInWithGoogle } = useAuth();
-  return (
-    <div className="container">
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
+const Login = () => {
+    // destrucer data from useAuth
+    const { handleLoginSubmit, singInWithGoogle, error, setError } = useAuth()
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+    const history = useHistory()
+    const location = useLocation()
+    const redirect_url = location.state?.from || "/home"
+    const handleGoogleSingin = () => {
+      singInWithGoogle()
 
-      <Button onClick={singInWithGoogle} variant="outline-secondary">Google Sing in</Button>
-    </div>
-  );
+            .then(result => {
+                console.log(result.user)
+                history.push(redirect_url)
+                setError("")
+            })
+            .catch(error => {
+                setError(error.message)
+
+            })
+    }
+    return (
+        <div className='Login'>
+            <div className="login-container text-center ">
+                <h5 className="text-red py-4" >Login Your Account!</h5>
+                <form className="login-form" onSubmit={handleLoginSubmit}>
+                    <input type="email" placeholder="Enter Your Email" required />
+                    <input type="password" placeholder="Enter Your Password" required />
+                    <button className="login-btn">Login</button>
+                </form>
+                <p>{error}</p>
+                <Link className="regintration" to="/registration">Create an account?</Link>
+                <button className="google-login" onClick={handleGoogleSingin}><i className="fab fa-google"></i> Sing in with Google</button>
+            </div>
+        </div>
+    );
 };
 
-export default LogIn;
+export default Login;

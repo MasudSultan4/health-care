@@ -3,36 +3,42 @@
     "id": 10,
     "img": "https://i.ibb.co/KVxkYtb/service1.jpg",
     "service_Name": "X-Ray",
-    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate."
+    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate.",
+    "Test_Cost": 12
   },
   {
     "id": 20,
-    "img": "https://i.ibb.co/KVxkYtb/service1.jpg",
-    "service_Name": "X-Ray",
-    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate."
+    "img": "https://i.ibb.co/X7sZBNX/services2.jpg",
+    "service_Name": "Blood-Test",
+    "discription": "The blood test clinic at George Eliot Hospital is currently limited to George Eliot Outpatients only, if you have been given a blood test form ",
+    "Test_Cost": 34
   },
   {
     "id": 30,
-    "img": "https://i.ibb.co/KVxkYtb/service1.jpg",
-    "service_Name": "X-Ray",
-    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate."
+    "img": "https://i.ibb.co/cbMvzDg/services3.jpg",
+    "service_Name": "Covid-Test",
+    "discription": "Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment. ",
+    "Test_Cost": 23
   },
   {
     "id": 40,
-    "img": "https://i.ibb.co/KVxkYtb/service1.jpg",
-    "service_Name": "X-Ray",
-    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate."
+    "img": "https://i.ibb.co/h2f7tK7/services4.jpg",
+    "service_Name": "Operation",
+    "discription": "Operations Service is a part of BHP that provides Production and Maintenance services. The jobs we offer are permanent BHP roles with full-time benefits ",
+    "Test_Cost": 90
   },
   {
     "id": 50,
-    "img": "https://i.ibb.co/KVxkYtb/service1.jpg",
-    "service_Name": "X-Ray",
-    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate."
+    "img": "https://i.ibb.co/W0yWdkJ/services5.jpg",
+    "service_Name": "surgery",
+    "discription": "Surgery is a medical or dental specialty that uses operative manual and instrumental techniques on a person to investigate or treat a pathological condition",
+    "Test_Cost": 900
   },
   {
     "id": 60,
-    "img": "https://i.ibb.co/KVxkYtb/service1.jpg",
-    "service_Name": "X-Ray",
-    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate."
+    "img": "https://i.ibb.co/WgJkHrh/services6.jpg",
+    "service_Name": "covid vaccine",
+    "discription": "Equitable access to safe and effective vaccines is critical to ending the COVID-19 pandemic, so it is hugely encouraging to see so many vaccines proving and going into development.",
+    "Test_Cost": 32
   }
 ]
