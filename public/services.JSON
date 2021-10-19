@@ -1,0 +1,38 @@
+[
+  {
+    "id": 10,
+    "img": "https://i.ibb.co/KVxkYtb/service1.jpg",
+    "service_Name": "X-Ray",
+    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate."
+  },
+  {
+    "id": 20,
+    "img": "https://i.ibb.co/KVxkYtb/service1.jpg",
+    "service_Name": "X-Ray",
+    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate."
+  },
+  {
+    "id": 30,
+    "img": "https://i.ibb.co/KVxkYtb/service1.jpg",
+    "service_Name": "X-Ray",
+    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate."
+  },
+  {
+    "id": 40,
+    "img": "https://i.ibb.co/KVxkYtb/service1.jpg",
+    "service_Name": "X-Ray",
+    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate."
+  },
+  {
+    "id": 50,
+    "img": "https://i.ibb.co/KVxkYtb/service1.jpg",
+    "service_Name": "X-Ray",
+    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate."
+  },
+  {
+    "id": 60,
+    "img": "https://i.ibb.co/KVxkYtb/service1.jpg",
+    "service_Name": "X-Ray",
+    "discription": "An X-ray from InHealth involves positioning the area of the body that is going to be examined between an X-ray device and a digital plate."
+  }
+]
