@@ -41,12 +41,12 @@ const useFirebase = () => {
         setPhoneNumber(e.target.value)
     }
     // Email User 
-    const handleEmailChange = (e) => {
+    const handleEmail = e => {
         setEmail(e.target.value);
       };
 
     //   password Change 
-      const handlePasswordChange = (e) => {
+      const handlePassword   = e => {
         if (e.target.value.length < 6) {
           return;
         } else {
@@ -116,10 +116,10 @@ const useFirebase = () => {
         setIsLogin,
         handleLoginSubmit,
         handleRagisterSubmit,
-        handlePasswordChange,
+        handlePassword,
         handleName,
         handlePhoneNumber,
-        handleEmailChange,
+        handleEmail,
         logOut
 
     }

@@ -2,7 +2,6 @@
   width: 90%;
   height: 100vh;
   margin: 0 auto;
-  font-family: 'Raleway', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,14 +32,12 @@
   margin-bottom: 10px;
   height: 40px;
   border: none;
-  border: 1px solid #dd0148;
   border-radius: 5px;
   padding: 0 15px;
 }
 .registration-btn {
   width: 90%;
   color: #fff;
-  background-color: #dd0148;
   border: none;
   padding: 5px 0;
   font-weight: 500;
@@ -49,17 +46,6 @@
 }
 
 .registration-container .login {
-  color: #dd0148;
   text-decoration: none;
   margin-top: 10px;
-}
-
-.registration-container .google-login {
-  text-decoration: none;
-  border: 1px solid black;
-  padding: 5px;
-  width: 90%;
-  color: black;
-  margin-top: 15px;
-  font-weight: 500;
 }

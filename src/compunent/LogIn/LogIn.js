@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from './../../Hooks/useAuth';
 import './LogIn.css';
@@ -27,14 +28,15 @@ const Login = () => {
         <div className='Login'>
             <div className="login-container text-center ">
                 <h5 className="text-red py-4" >Login Your Account!</h5>
+                <hr />
                 <form className="login-form" onSubmit={handleLoginSubmit}>
                     <input type="email" placeholder="Enter Your Email" required />
                     <input type="password" placeholder="Enter Your Password" required />
-                    <button className="login-btn">Login</button>
+                    <Button className="w-50">Login</Button>
                 </form>
                 <p>{error}</p>
                 <Link className="regintration" to="/registration">Create an account?</Link>
-                <button className="google-login" onClick={handleGoogleSingin}><i className="fab fa-google"></i> Sing in with Google</button>
+                <Button className="bg-warning text-black" onClick={handleGoogleSingin}><i className="fab fa-google"></i> Sing in with Google</Button>
             </div>
         </div>
     );
