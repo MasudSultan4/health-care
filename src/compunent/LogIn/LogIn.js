@@ -6,7 +6,7 @@ import './LogIn.css';
 
 const LogIn = () => {
     // destrucer data from useAuth
-    const { handleLoginSubmit, singInWithGoogle, error, setError } = useAuth()
+    const { handleLoginSubmit, singInWithGoogle, error, setError,handlePassword,handleEmail } = useAuth()
 
     const history = useHistory()
     const location = useLocation()
@@ -32,8 +32,8 @@ const LogIn = () => {
                 <h5 className="text-red py-4">Login Your Account!</h5>
                 <hr />
                 <form className="login-form" onSubmit={handleLoginSubmit}>
-                    <input type="email" placeholder="Enter Your Email" required />
-                    <input type="password" placeholder="Enter Your Password" required />
+                    <input type="email" onBlur={handleEmail} placeholder="Enter Your Email" required />
+                    <input type="password" onBlur={handlePassword} placeholder="Enter Your Password" required />
                     <Button type="submit" className="w-50">Login</Button>
                 </form>
                 <p>{error}</p>

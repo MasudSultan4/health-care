@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from './../Firebase/firebase.init';
 
@@ -6,9 +6,9 @@ import initializeAuthentication from './../Firebase/firebase.init';
 initializeAuthentication()
 const useFirebase = () => {
     const [user, setUser] = useState({});
-   const [displayName,setDisplayName] = useState("")
+   
     const [error, setError] = useState("");
-    const [phoneNumber,setPhoneNumber] = useState("")
+   
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [isLoading,setIsLoading] = useState(true);
@@ -27,18 +27,11 @@ const useFirebase = () => {
 
    
    
-    // function for set name in state
-    const handleName = e => {
-        setDisplayName(e.target.value)
-    }
+   
     // function for set email in state
     const handleEmail = e => {
         console.log(e.target.value);
         setEmail(e.target.value)
-    }
-    // function for set password in state
-    const handlePhoneNumber = e => {
-        setPhoneNumber(e.target.value)
     }
 
     // function for set password in state
@@ -55,14 +48,11 @@ const useFirebase = () => {
         console.log("reg", isLoading)
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
-                const userInfo = result.user
-                setUser(userInfo)
-                verifyEmail()
+                 setUser(result.user)
+                
+               
                 setError("")
-                if (userInfo) {
-                    userInfo.displayName = displayName;
-                    userInfo.phoneNumber = phoneNumber;
-                }
+               
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -78,27 +68,16 @@ const useFirebase = () => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
-                const userInfo = result.user;
-                console.log(userInfo)
+                setUser(result.user)
             })
             .catch(err => {
                 setError(err.message)
             })
-        setError("")
+        
 
     }
 
 
-
-    // Function for verify email
-    const verifyEmail = () => {
-        sendEmailVerification(auth.currentUser)
-            .then(() => { })
-            .catch((err) => {
-                const error = err.message;
-                setError(error)
-            })
-    }
 
 
     
@@ -134,8 +113,6 @@ const useFirebase = () => {
         handleLoginSubmit,
         handleRagisterSubmit,
         handlePassword,
-        handleName,
-        handlePhoneNumber,
         handleEmail,
         logOut
 

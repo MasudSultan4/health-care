@@ -6,18 +6,21 @@ import './Registion.css';
 
 
 const Registation = () => {
+    
     // destrucer the value from context object
-    const { handleName, handlePhoneNumber, handleEmail, handlePassword, handleRagisterSubmit, error, singInWithGoogle} = useAuth()
+    const {  handleEmail, handlePassword, handleRagisterSubmit, error, singInWithGoogle} = useAuth()
 
+    
+   
     return (
         <div className='Registration'>
             <div className="registration-container text-center ">
                 <h5 className="text-red py-4" >Create Your Account!</h5>
                 <form className="registration-form" 
                 onSubmit={handleRagisterSubmit}>
-                    <input type="text" placeholder="Enter Your Name" onBlur={handleName} required />
+                    
                     <input type="email" placeholder="Enter Your Email" onBlur={handleEmail} required />
-                    <input type="text" placeholder="Enter Your Phone Number" onBlur={handlePhoneNumber} required />
+                    
                     <input type="password" placeholder="Enter Your Password" onBlur={handlePassword} required />
                     <Button className="bg-secondary w-50" type="submit">Registration</Button>
                 </form>

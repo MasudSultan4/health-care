@@ -15,9 +15,9 @@ const Banner = () => {
                     src='https://i.ibb.co/q1KQgmR/img1.jpg'
                     alt="First slide"
                 />
-                <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <Carousel.Caption className="text-black">
+                    <h3 className="fw-bold">Expert Doctors</h3>
+                    <h5>You will be treated with the most friendly & compassionate care</h5>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -27,9 +27,9 @@ const Banner = () => {
                     alt="Second slide"
                 />
 
-                <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <Carousel.Caption className="text-black">
+                    <h3 className="fw-bold">Excellent Services</h3>
+                    <h5>Today, we fit into the perfect frame of services for everyone</h5>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -39,9 +39,9 @@ const Banner = () => {
                     alt="Third slide"
                 />
 
-                <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <Carousel.Caption className="text-black">
+                    <h3 className="fw-bold">Best Experience</h3>
+                    <h5>Community health and vision care to the area for over</h5>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
