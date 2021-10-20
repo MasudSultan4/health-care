@@ -5,7 +5,7 @@ import useAuth from '../../Hooks/useAuth';
 import './Registion.css';
 
 
-const Registration = () => {
+const Registation = () => {
     // destrucer the value from context object
     const { handleName, handlePhoneNumber, handleEmail, handlePassword, handleRagisterSubmit, error, singInWithGoogle} = useAuth()
 
@@ -19,7 +19,7 @@ const Registration = () => {
                     <input type="email" placeholder="Enter Your Email" onBlur={handleEmail} required />
                     <input type="text" placeholder="Enter Your Phone Number" onBlur={handlePhoneNumber} required />
                     <input type="password" placeholder="Enter Your Password" onBlur={handlePassword} required />
-                    <Button className="bg-secondary w-50">Registration</Button>
+                    <Button className="bg-secondary w-50" type="submit">Registration</Button>
                 </form>
                 <p className="my-1">{error}</p>
                 <Link className="login" to="/login">Already have an account?</Link>
@@ -30,4 +30,4 @@ const Registration = () => {
     );
 };
 
-export default Registration;
+export default Registation;

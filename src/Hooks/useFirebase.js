@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from './../Firebase/firebase.init';
 
@@ -11,7 +11,7 @@ const useFirebase = () => {
     const [phoneNumber,setPhoneNumber] = useState("")
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
-    const [isLogin,setIsLogin] = useState(true);
+    const [isLoading,setIsLoading] = useState(true);
     
     const auth = getAuth();
 
@@ -23,49 +23,41 @@ const useFirebase = () => {
     }
 
 
-    // log out 
-    const logOut = () => {
-        signOut(auth)
-        .then(()=>{
-            setUser({});
-        })
-    }
+    
 
    
-    // display Name 
+   
+    // function for set name in state
     const handleName = e => {
         setDisplayName(e.target.value)
     }
-    // Phone Number 
+    // function for set email in state
+    const handleEmail = e => {
+        console.log(e.target.value);
+        setEmail(e.target.value)
+    }
+    // function for set password in state
     const handlePhoneNumber = e => {
         setPhoneNumber(e.target.value)
     }
-    // Email User 
-    const handleEmail = e => {
-        setEmail(e.target.value);
-      };
 
-    //   password Change 
-      const handlePassword   = e => {
-        if (e.target.value.length < 6) {
-          return;
-        } else {
-          setPassword(e.target.value);
-        }
-      };
+    // function for set password in state
+    const handlePassword = e => {
+        setPassword(e.target.value)
+    }
 
-       // register email password 
-       // Function for registration
+   // Function for registration
     const handleRagisterSubmit = e => {
         e.preventDefault();
         if (password.length < 6) {
             setError("Password should be more than 6 character")
         }
-        // console.log("reg", isLogin)
+        console.log("reg", isLoading)
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 const userInfo = result.user
                 setUser(userInfo)
+                verifyEmail()
                 setError("")
                 if (userInfo) {
                     userInfo.displayName = displayName;
@@ -77,7 +69,9 @@ const useFirebase = () => {
                 const errorMessage = error.message;
                 setError(errorMessage, errorCode)
             })
-            
+            .finally(() => {
+                setIsLoading(false)
+            })
     }
 // function for login
     const handleLoginSubmit = e => {
@@ -93,27 +87,50 @@ const useFirebase = () => {
         setError("")
 
     }
- 
 
-          
+
+
+    // Function for verify email
+    const verifyEmail = () => {
+        sendEmailVerification(auth.currentUser)
+            .then(() => { })
+            .catch((err) => {
+                const error = err.message;
+                setError(error)
+            })
+    }
+
+
     
-
-    useEffect(()=>{
-        onAuthStateChanged(auth,user => {
-            if(user){
+    // observ user state
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, user => {
+            if (user) {
                 setUser(user)
             }
+            else {
+                setUser({})
+            }
+            setIsLoading(false)
         })
-    },[]);
+        return () => unsubscribe;
+    }, [])
 
+    // Function for logOut
+    const logOut = () => {
+        setIsLoading(true)
+        signOut(auth)
+            .then(result => { setUser({}) })
+            .finally(() => setIsLoading(false))
+    }
 
     return {
         user,
         error,
         singInWithGoogle,
         setError,
-        isLogin,
-        setIsLogin,
+        isLoading,
+        setIsLoading,
         handleLoginSubmit,
         handleRagisterSubmit,
         handlePassword,

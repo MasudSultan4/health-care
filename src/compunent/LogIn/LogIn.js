@@ -4,7 +4,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from './../../Hooks/useAuth';
 import './LogIn.css';
 
-const Login = () => {
+const LogIn = () => {
     // destrucer data from useAuth
     const { handleLoginSubmit, singInWithGoogle, error, setError } = useAuth()
 
@@ -13,7 +13,6 @@ const Login = () => {
     const redirect_url = location.state?.from || "/home"
     const handleGoogleSingin = () => {
       singInWithGoogle()
-
             .then(result => {
                 console.log(result.user)
                 history.push(redirect_url)
@@ -24,15 +23,18 @@ const Login = () => {
 
             })
     }
+
+
+
     return (
         <div className='Login'>
             <div className="login-container text-center ">
-                <h5 className="text-red py-4" >Login Your Account!</h5>
+                <h5 className="text-red py-4">Login Your Account!</h5>
                 <hr />
                 <form className="login-form" onSubmit={handleLoginSubmit}>
                     <input type="email" placeholder="Enter Your Email" required />
                     <input type="password" placeholder="Enter Your Password" required />
-                    <Button className="w-50">Login</Button>
+                    <Button type="submit" className="w-50">Login</Button>
                 </form>
                 <p>{error}</p>
                 <Link className="regintration" to="/registration">Create an account?</Link>
@@ -42,4 +44,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default LogIn;

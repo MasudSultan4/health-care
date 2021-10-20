@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 const Doctor = ({ doctor }) => {
     const {  name, url,experans,Fee } = doctor;
     return (
-        <div className="col-4">
+        <div className="col-md-4 col-12">
         <div className="card mb-3 p-2" >
             <img style={{ "height": "180px" }} src={url} className="card-img-top w" alt="..." />
             <div className="card-body">

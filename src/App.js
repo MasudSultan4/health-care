@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import About from './compunent/About/About';
 import Contact from './compunent/Contact/Contact';
+import Doctors from './compunent/Doctors/Doctors';
 import Footer from './compunent/Footer/Footer';
 import Header from './compunent/Header/Header';
 import Home from './compunent/Home/Home';
 import LogIn from './compunent/LogIn/LogIn';
 import NotFound from './compunent/NotFound/NotFound';
 import PrivateRoute from './compunent/PrivateRoute/PrivateRoute';
-import Registration from './compunent/Registation/Registaion';
+import Registation from './compunent/Registation/Registaion';
 import Services from './compunent/Services/Services';
 import ServicesDetails from './compunent/ServicesDetails/ServicesDetails';
 import AuthProvider from './context/AuthProvider';
@@ -31,6 +32,9 @@ function App() {
          <Route path="/service">
            <Services></Services>
          </Route>
+         <Route path="/doctor">
+           <Doctors></Doctors>
+         </Route>
          <PrivateRoute path='/serviceDetails/:detailsId'>
           <ServicesDetails></ServicesDetails>
          </PrivateRoute>
@@ -41,7 +45,7 @@ function App() {
            <Contact></Contact>
          </Route>
          <Route path="/registration">
-            <Registration></Registration>
+            <Registation></Registation>
          </Route>
          <Route path="/login">
            <LogIn></LogIn>
