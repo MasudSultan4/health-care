@@ -1,17 +1,21 @@
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
+// import { useHistory, useLocation } from 'react-router-dom';
 import initializeAuthentication from './../Firebase/firebase.init';
 
 
 initializeAuthentication()
 const useFirebase = () => {
     const [user, setUser] = useState({});
-   
     const [error, setError] = useState("");
-   
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [isLoading,setIsLoading] = useState(true);
+    
+
+   /*  const history = useHistory()
+    const location = useLocation()
+    const redirect_url = location.state?.from || "/home"; */
     
     const auth = getAuth();
 
@@ -23,13 +27,6 @@ const useFirebase = () => {
        return signInWithPopup(auth, googleProvider)  
     }
     
-
-
-    
-
-   
-   
-   
     // function for set email in state
     const handleEmail = e => {
         console.log(e.target.value);
@@ -43,38 +40,22 @@ const useFirebase = () => {
 
    // Function for registration
     const handleRagisterSubmit = e => {
-        e.preventDefault();
+        
+        // history.push(redirect_url)
         if (password.length < 6) {
             setError("Password should be more than 6 character")
         }
         console.log("reg", isLoading)
-         createUserWithEmailAndPassword(auth, email, password)
-            .then((result) => {
-                 setUser(result.user)
-                setError("")
-               
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                setError(errorMessage, errorCode)
-            })
-            .finally(() => {
-                setIsLoading(false)
-            })
+        setIsLoading(true)
+        return createUserWithEmailAndPassword(auth, email, password)
+        
     }
 // function for login
-    const handleLoginSubmit = e => {
-        e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                setUser(result.user)
-            })
-            .catch(err => {
-                setError(err.message)
-            })
-        
-
+    const handleLoginSubmit = () => {
+       
+        // history.push(redirect_url)
+        setIsLoading(true)
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
 
@@ -108,6 +89,7 @@ const useFirebase = () => {
         error,
         singInWithGoogle,
         setError,
+        setUser,
         isLoading,
         setIsLoading,
         handleLoginSubmit,

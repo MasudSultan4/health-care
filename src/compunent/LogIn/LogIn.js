@@ -1,18 +1,19 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 import useAuth from './../../Hooks/useAuth';
 import './LogIn.css';
 
 const LogIn = () => {
     // destrucer data from useAuth
-    const { handleLoginSubmit, singInWithGoogle, error, setError,handlePassword,handleEmail,setIsLoading } = useAuth()
+    const { handleLoginSubmit, singInWithGoogle, error,setUser, setError,handlePassword,handleEmail,setIsLoading } = useAuth()
 
     const history = useHistory()
     const location = useLocation()
     const redirect_url = location.state?.from || "/home"
-    const handleGoogleSingin = () => {
-        
+    const handleGoogleSingin = (e) => {
+        e.preventDefault();
       singInWithGoogle()
             .then(result => {
                 console.log(result.user)
@@ -28,7 +29,23 @@ const LogIn = () => {
             
     }
    
- 
+ const onLogin= (e) =>{
+    
+    e.preventDefault();
+    handleLoginSubmit()
+    .then((result) => {
+        history.push(redirect_url)
+        setUser(result.user)
+       setError("")
+      
+   }) 
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            setError(errorMessage, errorCode)
+        })
+        setIsLoading(false)
+ }
 
 
     return (
@@ -36,7 +53,7 @@ const LogIn = () => {
             <div className="login-container text-center ">
                 <h5 className="text-red py-4">Login Your Account!</h5>
                 <hr />
-                <form className="login-form" onSubmit={handleLoginSubmit}>
+                <form className="login-form" onSubmit={onLogin}>
                     <input type="email" onBlur={handleEmail} placeholder="Enter Your Email" required />
                     <input type="password" onBlur={handlePassword} placeholder="Enter Your Password" required />
                     <Button type="submit" className="w-50">Login</Button>

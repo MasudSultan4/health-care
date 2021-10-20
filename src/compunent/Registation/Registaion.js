@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import './Registion.css';
@@ -8,8 +9,22 @@ import './Registion.css';
 const Registation = () => {
     
     // destrucer the value from context object
-    const {  handleEmail, handlePassword, handleRagisterSubmit, error, singInWithGoogle} = useAuth()
+    const {  handleEmail, handlePassword, handleRagisterSubmit, error,setUser,setIsLoading,setError, singInWithGoogle} = useAuth()
+    const history = useHistory()
+    const location = useLocation()
+    const redirect_url = location.state?.from || "/home"
 
+    const onRegister = (e) =>{
+        e.preventDefault();
+        handleRagisterSubmit()
+        .then((result) => {
+            history.push(redirect_url)
+            setUser(result.user)
+           setError("")
+          
+       })
+       setIsLoading(false) 
+    }
     
    
     return (
@@ -17,7 +32,7 @@ const Registation = () => {
             <div className="registration-container text-center ">
                 <h5 className="text-red py-4" >Create Your Account!</h5>
                 <form className="registration-form" 
-                onSubmit={handleRagisterSubmit}>
+                onSubmit={onRegister}>
                     
                     <input type="email" placeholder="Enter Your Email" onBlur={handleEmail} required />
                     
