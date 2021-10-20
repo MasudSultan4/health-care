@@ -19,8 +19,10 @@ const useFirebase = () => {
 
     // sing in with google 
     const singInWithGoogle = () => {
+        setIsLoading(true)
        return signInWithPopup(auth, googleProvider)  
     }
+    
 
 
     
@@ -46,11 +48,9 @@ const useFirebase = () => {
             setError("Password should be more than 6 character")
         }
         console.log("reg", isLoading)
-        createUserWithEmailAndPassword(auth, email, password)
+         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                  setUser(result.user)
-                
-               
                 setError("")
                
             })

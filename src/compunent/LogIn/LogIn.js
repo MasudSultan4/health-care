@@ -6,12 +6,13 @@ import './LogIn.css';
 
 const LogIn = () => {
     // destrucer data from useAuth
-    const { handleLoginSubmit, singInWithGoogle, error, setError,handlePassword,handleEmail } = useAuth()
+    const { handleLoginSubmit, singInWithGoogle, error, setError,handlePassword,handleEmail,setIsLoading } = useAuth()
 
     const history = useHistory()
     const location = useLocation()
     const redirect_url = location.state?.from || "/home"
     const handleGoogleSingin = () => {
+        
       singInWithGoogle()
             .then(result => {
                 console.log(result.user)
@@ -22,8 +23,12 @@ const LogIn = () => {
                 setError(error.message)
 
             })
+            setIsLoading(false)
+            
+            
     }
-
+   
+ 
 
 
     return (
